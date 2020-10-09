@@ -25,7 +25,7 @@ Association
 | provider | string | null: false |
 | uid      | string | null: false、unique: true |
 | token    | test   |        |
-| user     | references	| null: false, foreign_key: true | 
+| purchase | references	| null: false, foreign_key: true | 
 
 Association
 
@@ -62,15 +62,16 @@ Association
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| name | string | null: false, foreign_key: true |
-| introduction| text | null: false, foreign_key: true |
-| price | integer | null: false, foreign_key: true |
-| condition_id| integer| null: false,foreign_key: true|
-| postage_payer_id	| integer	 | null: false,foreign_key: true|
-| preparation_day_id |  integer | null: false ,foreign_key: true|
-| postage_type_id | integer	 | null: false,foreign_key: true|
-| prefecture_code_id | integer | null: false,foreign_key: true |
-| category_id| integer | null: false,foreign_key: true |
+| name | string | null: false |
+| introduction| text | null: false |
+| price | integer | null: false|
+| condition_id| integer| null: false|
+| postage_payer_id	| integer	 | null: false|
+| preparation_day_id |  integer | null: false|
+| postage_type_id | integer	 | null: false|
+| prefecture_code_id | integer | null: false |
+| category_id| integer | null: false |
+| user_id| integer | null: false,foreign_key: true |
 
 Association
 
