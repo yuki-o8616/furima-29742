@@ -40,7 +40,7 @@ Association
 | house_number| string | null:false |
 | phone_number | string | null:false |
 | building_name | string	| 
-| Prefectures_id | integer |null:false |
+| prefectures_id | integer |null:false |
 
 Association
 
@@ -100,4 +100,5 @@ Association
 Association
 
 - belongs_to :item
-- belongs_to :sending_destinations
+- belongs_to :sending_destination
+- belongs_to :user
