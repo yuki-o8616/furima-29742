@@ -11,7 +11,7 @@
 | first_name | string | null: false |
 | family_name_kana | string | null: false |
 | first_name_kana | string | null: false |
-| birth_date | string | null: false |
+| date_birth | string | null: false |
 
 Association
 
@@ -40,11 +40,11 @@ Association
 | house_number| string | null:false |
 | phone_number | string | 
 | building_name | string	| 
+| Prefectures | string |
 
 Association
 
-- belongs_to :user 
-gem 'active_hash'
+- belongs_to :For product purchase 
 
 ## points テーブル
 
@@ -61,15 +61,21 @@ Association
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| name | string | null: false |
-| introduction	| text | null: false |
+| name | string | null: false, foreign_key: true |
+| introduction	| text | null: false, foreign_key: true |
 | price | integer | null: false |
-| item_condition| integer| null: false|
-| postage_payer	| integer	 | null: false|
-| preparation_day |  integer	 | null: false |
-| postage_type | integer	 | null: false|
-| prefecture_code	 | integer | null: false |
-| category| integer | null: false |
+| condition_id| integer| null: false|
+| postage_payer_id	| integer	 | null: false|
+| preparation_day_id |  integer	 | null: false |
+| postage_type_id | integer	 | null: false|
+| prefecture_code_id	 | integer | null: false |
+| category_id| integer | null: false |
+
+Association
+
+- belongs_to :user 
+
+
 
 ## like テーブル
 
@@ -87,5 +93,5 @@ Association
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| user_id | string |null:false |
-| item_id | string |null:false |
+| user_id | string |null:false, foreign_key: true |
+| item_id | string |null:false, foreign_key: true |
