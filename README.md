@@ -89,7 +89,7 @@ Association
 - belongs_to :user 
 - belongs_to :item
 
-## For product purchase テーブル
+##  purchase テーブル
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
