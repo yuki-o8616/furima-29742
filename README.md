@@ -11,7 +11,7 @@
 | first_name | string | null: false |
 | family_name_kana | string | null: false |
 | first_name_kana | string | null: false |
-| date_birth | string | null: false |
+| birth_day | date | null: false |
 
 Association
 
@@ -37,14 +37,14 @@ Association
 | -------- | ------ | ----------- |
 | post_code | string | null:false |
 | city | string | null:false |
-| house_number| string | null:false |
-| phone_number | string | 
-| building_name | string	| 
-| Prefectures | string |
+| house_number_id| string | null:false |
+| phone_number_id | string | null:false |
+| building_name_id | string	| 
+| Prefectures_id | string |null:false |
 
 Association
 
-- belongs_to :For product purchase 
+- belongs_to : purchase 
 
 ## points テーブル
 
@@ -66,14 +66,15 @@ Association
 | price | integer | null: false |
 | condition_id| integer| null: false|
 | postage_payer_id	| integer	 | null: false|
-| preparation_day_id |  integer	 | null: false |
+| preparation_day_id |  integer | null: false |
 | postage_type_id | integer	 | null: false|
-| prefecture_code_id	 | integer | null: false |
+| prefecture_code_id | integer | null: false |
 | category_id| integer | null: false |
 
 Association
 
 - belongs_to :user 
+- belongs_to :purchase
 
 
 
@@ -93,5 +94,7 @@ Association
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| user_id | string |null:false, foreign_key: true |
-| item_id | string |null:false, foreign_key: true |
+| user_id | references |null:false, foreign_key: true |
+| item_id |references |null:false, foreign_key: true |
+
+- belongs_to :item
