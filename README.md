@@ -37,10 +37,10 @@ Association
 | -------- | ------ | ----------- |
 | post_code | string | null:false |
 | city | string | null:false |
-| house_number_id| string | null:false |
-| phone_number_id | string | null:false |
-| building_name_id | string	| 
-| Prefectures_id | string |null:false |
+| house_number| string | null:false |
+| phone_number | string | null:false |
+| building_name | string	| 
+| Prefectures_id | integer |null:false |
 
 Association
 
@@ -74,7 +74,7 @@ Association
 Association
 
 - belongs_to :user 
-- belongs_to :purchase
+- has_one :purchase
 
 
 
@@ -95,6 +95,6 @@ Association
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | user_id | references |null:false, foreign_key: true |
-| item_id |references |null:false, foreign_key: true |
+| item |references |null:false, foreign_key: true |
 
 - belongs_to :item
