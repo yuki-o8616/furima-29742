@@ -63,7 +63,7 @@ RSpec.describe User, type: :model do
       end
 
       it "passwordは半角英数混合でなければ登録ができない" do
-        @user.password = nil
+        @user.password = "222222"
         @user.valid?
         expect(@user.errors.full_messages).to include("password cannot be registered unless it is a mixture of half-width alphanumeric characters")
       end
@@ -80,19 +80,30 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("first_Name can't be blank")
       end
 
-      it "フリガナが全角（漢字・ひらがな・カタカナ）以外だと登録できない" do
-        @user.name = nil
+      it "フリガナ（苗字）が全角（漢字・ひらがな・カタカナ）以外だと登録できない" do
+        @user.family_name = yamada
         @user.valid?
         expect(@user.errors.full_messages).to include("Registration is not possible unless Frigana is full-width (Kanji, Hiragana, Katakana)")
 
       end
 
-      it "フリガナが全角以外だと登録できない" do
-        @user.name = nil
+      it "フリガナが全角(名前）（漢字・ひらがな・カタカナ）以外だと登録できない" do
+        @user.first_name = tarou
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Registration is not possible unless Frigana is full-width (Kanji, Hiragana, Katakana)")
+
+      end
+
+      it "フリガナ(苗字）が全角以外だと登録できない" do
+        @user.family_name = yamada
         @user.valid?
         expect(@user.errors.full_messages).to include("cannot register if Frigana is not full-width")
 
       end
+      it "フリガナ（名前）が全角以外だと登録できない" do
+        @user.first_name = tarou
+        @user.valid?
+        expect(@user.errors.full_messages).to include("cannot register if Frigana is not full-width")
 
       it "生年月日が空だと登録できない" do
         @user.birth_day = nil
