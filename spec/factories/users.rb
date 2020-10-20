@@ -8,6 +8,6 @@ FactoryBot.define do
     first_name{ '雄介'}
     family_name_kana{ 'ハナヤマ' }
     first_name_kana{ 'ユウスケ'}
-    birth_day { Faker::day.last_day }
+    birth_day { Faker::Date.in_date_period }
   end
 end
