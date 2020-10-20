@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
 
     context "登録できないパターン" do
       it "nicknameが空では登録できないこと" do
-        @user.name = nil
+        @user.nickname = nil
         @user.valid?
         expect(@user.errors.full_messages).to include("Name can't be blank")
       end
@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
       end
 
       it "emailに＠がなければ登録できないこと" do
-        @user.email = ""
+        @user.email = "emk@emill"
         @user.valid?
         expect(@user.errors.full_messages).to include("email can't be need @")
       end
@@ -38,14 +38,14 @@ RSpec.describe User, type: :model do
       end
       
       it "passwordが6文字未満では登録ができない" do
-        @user.password = "123456"
-        @user.password_confirmation = "123456"
+        @user.password = "12345"
+        @user.password_confirmation = "12345"
         expect(@user).to be_valid
       end
 
       it "passwordとpassword_confirmationが不一致では登録できないこと" do
 
-        @user.password_confirmation = ""
+        @user.password_confirmation = "12345"
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
@@ -53,13 +53,15 @@ RSpec.describe User, type: :model do
       it "password_confirmationがなければ登録ができない" do
         @user.password = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("Registration is not possible without password_confirmation")
+        expect(@user.errors.full_messages).to include("password_confirmation can't be blank")
       end
       
       it "重複したemailが存在する場合登録できないこと" do
-        @user.email = nil
-        @user.valid?
-        expect(@user.errors.full_messages).to include( "Cannot register if there are duplicate emails")
+        @user.save
+        another_user =  User.new(nickname: "Faker::Name.last_name", email: "Faker::Internet.free_email", password: "b4j23K45", password_confirmation: "b4j23K45")       
+        another_user.email = @user.email 
+        another_user.valid?
+        expect(another_user.errors.full_messages).to include( "Cannot register if there are duplicate emails")
       end
 
       it "passwordは半角英数混合でなければ登録ができない" do
