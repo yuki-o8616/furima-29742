@@ -71,7 +71,7 @@ Association
 | postage_type_id | integer	 | null: false|
 | prefecture_code_id | integer | null: false |
 | category_id| integer | null: false |
-| user_id| integer | null: false,foreign_key: true |
+| user_id| integer |null: false,foreign_key: true|
 
 Association
 
