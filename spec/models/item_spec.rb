@@ -33,7 +33,7 @@ RSpec.describe Item, type: :model do
       end
 
       it 'カテゴリーが未選択（値：1）の場合は登録できない' do
-        @item.category_id = 0
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Category You need to select')
       end
@@ -45,7 +45,7 @@ RSpec.describe Item, type: :model do
       end
 
       it '商品の状態が未選択（値：1）の場合は登録できない' do
-        @item.condition_id = 0
+        @item.condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Condition You need to select')
       end
@@ -57,7 +57,7 @@ RSpec.describe Item, type: :model do
       end
 
       it '発送料の負担が未選択（値：1）の場合は登録できない' do
-        @item.postage_payer_id = 0
+        @item.postage_payer_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Postage payer You need to select')
       end
@@ -69,7 +69,7 @@ RSpec.describe Item, type: :model do
       end
 
       it '発送料の負担が未選択（値：1）の場合は登録できない' do
-        @item.postage_payer_id = 0
+        @item.postage_payer_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Postage payer You need to select')
       end
@@ -81,7 +81,7 @@ RSpec.describe Item, type: :model do
       end
 
       it '発送元の地域が未選択（値：1）の場合は登録できない' do
-        @item.prefecture_id = 0
+        @item.prefecture_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Prefecture You need to select')
       end
