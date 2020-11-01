@@ -15,7 +15,7 @@ class Item < ApplicationRecord
     validates :price
     validates :image
     validates :price_range_valid?
-    validates :category_id, :condition_id, :postage_payer_id, :preparation_day_id, :prefecture_id, numericality: { other_than: 0, message: 'You need to select' }
+    validates :category_id, :condition_id, :postage_payer_id, :preparation_day_id, :prefecture_id, numericality: { other_than: 1, message: 'You need to select' }
     validates :category_id, numericality: {  other_than: 1, message: 'Select' }
     validates :condition_id, numericality: { other_than: 1, message: 'Select' }
     validates :postage_payer_id, numericality: { other_than: 1, message: 'Select' }

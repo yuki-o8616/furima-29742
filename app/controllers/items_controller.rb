@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
+  before_action authenticate_user!
   def index
-    before_action authenticate_user!
+   
   end
 
   def new
