@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
     else
     render 'new'
     end
-    # redirect_to new_item_path, flash: { alert: "必須項目を入力して下さい"}
+    
   end
 
   private
