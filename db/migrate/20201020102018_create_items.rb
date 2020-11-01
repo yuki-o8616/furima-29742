@@ -14,8 +14,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
      
 
 
-      # add_foreign_key :items, :users,    column: :user   #name: :user_id
-      # add_foreign_key :items, :users,    column: :user
+     
     end
   end
 end
