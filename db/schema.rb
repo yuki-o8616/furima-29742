@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2020_10_21_094006) do
     t.integer "prefecture_id", null: false
     t.integer "category_id", null: false
     t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
