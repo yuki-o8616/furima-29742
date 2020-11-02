@@ -3,8 +3,8 @@ FactoryBot.define do
     association :user
 
     name { '商品名テスト' }
-    introduction { 'アクセサリー'}
-    price {1200}
+    introduction { 'アクセサリー' }
+    price { 1200 }
     condition_id {2}
     postage_payer_id {2}
     preparation_day_id {2}
