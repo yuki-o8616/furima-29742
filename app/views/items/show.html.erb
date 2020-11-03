@@ -46,7 +46,7 @@
       <tbody>
         <tr>
           <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= @item.user.name %></td>
+          <td class="detail-value"><%= @item.user.nickname %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
@@ -58,7 +58,7 @@
         </tr>
         <tr>
           <th class="detail-item">配送料の負担</th>
-          <td class="detail-value"><%= @item.postage.name %></td>
+          <td class="detail-value"><%= @item.postage_payer.name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送元の地域</th>
