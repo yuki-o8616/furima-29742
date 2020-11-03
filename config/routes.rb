@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # end
   root 'items#index'
   resources :categories, only: [:index, :show] 
-  
+
   resources :items 
 
 end
