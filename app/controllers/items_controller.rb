@@ -7,10 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
-    
-   #@comment = Comment.new
-    #@comments = @i tem.comments.includes(:user)
+    #@item = Item.find(params[:id])
   end
 
   def new
@@ -29,9 +26,9 @@ class ItemsController < ApplicationController
     end
   end
   
-  def edit
-    redirect_to root_path if @item.user.id != current_user.id
-  end
+  #def edit
+  #redirect_to root_path if @item.user.id != current_user.id
+  #end
 
   private
 
