@@ -5,8 +5,8 @@ FactoryBot.define do
     name { '商品名テスト' }
     introduction { 'アクセサリー' }
     price { 1200 }
-    condition_id {2}
-    postage_payer_id {2}
+    condition_id { 2 }
+    postage_payer_id { 2}
     preparation_day_id {2}
     prefecture_id {2}
     category_id {2}
