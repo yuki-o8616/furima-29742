@@ -11,9 +11,7 @@ Rails.application.routes.draw do
   #   post 'sending_destinations', to: 'users/registrations#createSendingDestination'
   # end
   root 'items#index'
-  
-  
-  resources :items 
+  resources :items, only: [:index, :new, :create, :destroy, :edit, :update, :show]
 
 end
 
