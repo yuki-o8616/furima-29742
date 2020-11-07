@@ -2,19 +2,19 @@ require 'rails_helper'
 
 RSpec.describe ItemPurchase, type: :model do
   describe '商品購入機能実装' do
-  before do
-    @user = FactoryBot.create(:user)
-    @item = FactoryBot.build(:item)
-    @item.user_id = @user.id
-    @item.image = fixture_file_upload('public/images/test.png')
-    @item.save
-    @purchase = FactoryBot.build(:item_purchase)
-    @purchase.user_id = @item.user_id
-    @purchase.item_id = @user.id
-    sleep 1
-  end
+    before do
+      @user = FactoryBot.create(:user)
+      @item = FactoryBot.build(:item)
+      @item.user_id = @user.id
+      @item.image = fixture_file_upload('public/images/test.png')
+      @item.save
+      @purchase = FactoryBot.build(:item_purchase)
+      @purchase.user_id = @item.user_id
+      @purchase.item_id = @user.id
+      sleep 1
+    end
 
-  context '登録できるパターン' do
+    context '登録できるパターン' do
       it '全ての項目が揃っていれば購入できる' do
         expect(@purchase).to be_valid
       end
@@ -25,7 +25,7 @@ RSpec.describe ItemPurchase, type: :model do
     end
 
     context '登録できないパターン' do
-      #prefecture_count = Prefecture.count
+      # prefecture_count = Prefecture.count
       it 'ログインしていない（ユーザIDが空欄）場合登録できない' do
         @purchase.user_id = nil
         @purchase.valid?
@@ -54,9 +54,9 @@ RSpec.describe ItemPurchase, type: :model do
       it '都道府県が未選択の場合登録できない' do
         @purchase.prefecture_id = 0
         @purchase.valid?
-        expect(@purchase.errors.full_messages).to include("Prefecture Select")
+        expect(@purchase.errors.full_messages).to include('Prefecture Select')
       end
-      
+
       it '市区町村が空欄の場合登録できない' do
         @purchase.city = nil
         @purchase.valid?

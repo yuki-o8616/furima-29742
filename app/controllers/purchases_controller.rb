@@ -39,7 +39,7 @@ class PurchasesController < ApplicationController
   end
 
   def purchase_params
-    params.require(:item_purchase).permit(:post_code, :prefecture_id, :city, :phone_number,:house_number,:building_name).merge(user_id: current_user.id,token: params[:token],item_id: params[:item_id])
+    params.require(:item_purchase).permit(:post_code, :prefecture_id, :city, :phone_number, :house_number, :building_name).merge(user_id: current_user.id, token: params[:token], item_id: params[:item_id])
   end
 
   def pay_item
@@ -49,5 +49,5 @@ class PurchasesController < ApplicationController
       card: params[:token],
       currency: 'jpy'
     )
-    end
+  end
 end
