@@ -1,5 +1,7 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  has_one :purchase
+  has_one :address
   belongs_to :user
   belongs_to :user, optional: true
   has_one_attached :image
@@ -20,6 +22,8 @@ class Item < ApplicationRecord
     validates :condition_id, numericality: { other_than: 1, message: 'Select' }
     validates :postage_payer_id, numericality: { other_than: 1, message: 'Select' }
     validates :preparation_day_id, numericality: { other_than: 1, message: 'Select' }
+    validates :prefecture_id, numericality: { other_than: 0, message: 'Select' }
+
   end
 
   private

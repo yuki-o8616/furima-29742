@@ -41,7 +41,7 @@ Association
 | phone_number | string | null:false |
 | building_name | string	| 
 | prefectures_id | integer |null:false |
-| user | references | null: false, foreign_key: true |
+| purchase  | references | null: false, foreign_key: true |
 
 Association
 
