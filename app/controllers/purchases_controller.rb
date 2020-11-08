@@ -25,8 +25,7 @@ class PurchasesController < ApplicationController
   end
 
   def item_present?
-    redirect_to root_path if @item.purchase.present?
-    redirect_to root_path if @item.user_id == current_user.id
+    redirect_to root_path if @item.purchase.present? or @item.user_id == current_user.id
   end
   
   

@@ -5,8 +5,6 @@ RSpec.describe ItemPurchase, type: :model do
     before do
       @user = FactoryBot.create(:user)
       @item = FactoryBot.build(:item)
-      @item.user_id = @user.id
-      @item.image = fixture_file_upload('public/images/test.png')
       @item.save
       @purchase = FactoryBot.build(:item_purchase)
       @purchase.user_id = @item.user_id

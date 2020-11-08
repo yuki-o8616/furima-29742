@@ -10,6 +10,7 @@ FactoryBot.define do
     preparation_day_id { 2 }
     prefecture_id {2}
     category_id {2}
+    image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/endo.png')) }
   end
 end
 # アクティブハッシュのファイル削除
