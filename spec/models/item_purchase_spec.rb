@@ -5,7 +5,6 @@ RSpec.describe ItemPurchase, type: :model do
     before do
       @user = FactoryBot.create(:user)
       @item = FactoryBot.create(:item)
-      @item.save
       @purchase = FactoryBot.build(:item_purchase)
       @purchase.user_id = @item.user_id
       @purchase.item_id = @user.id
