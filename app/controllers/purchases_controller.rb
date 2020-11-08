@@ -1,6 +1,6 @@
 class PurchasesController < ApplicationController
   before_action :set_item
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:index]
 
   def index
     item_present?
