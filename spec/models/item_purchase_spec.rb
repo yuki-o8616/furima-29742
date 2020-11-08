@@ -4,7 +4,7 @@ RSpec.describe ItemPurchase, type: :model do
   describe '商品購入機能実装' do
     before do
       @user = FactoryBot.create(:user)
-      @item = FactoryBot.build(:item)
+      @item = FactoryBot.create(:item)
       @item.save
       @purchase = FactoryBot.build(:item_purchase)
       @purchase.user_id = @item.user_id
