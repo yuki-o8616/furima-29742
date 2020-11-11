@@ -22,7 +22,7 @@ class Item < ApplicationRecord
     validates :condition_id, numericality: { other_than: 1, message: 'Select' }
     validates :postage_payer_id, numericality: { other_than: 1, message: 'Select' }
     validates :preparation_day_id, numericality: { other_than: 1, message: 'Select' }
-    validates :prefecture_id, numericality: { other_than: 0, message: 'Select' }
+    validates :prefecture_id, numericality: { other_than: 1, message: 'Select' }
 
   end
 
